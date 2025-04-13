@@ -349,14 +349,19 @@ if uploaded_resume:
         st.warning("⚠️ No job roles detected in the resume analysis.")
     
 
+# Get the current file directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to the Excel file
+file_path = os.path.join(current_dir, "career_guidance_qna (1).xlsx")
   
 
 
 # --- Load Excel Questions ---
 try:
-    df = pd.read_excel("career_guidance_qna (1).xlsx")
+    df = pd.read_excel(file_path)
 except Exception as e:
-    st.error("❌ Error loading Excel file. Please check the file path and name.")
+    st.error(f"❌ Error loading Excel file: {e}")
     st.stop()
 
 @st.cache_resource
