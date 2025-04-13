@@ -1,0 +1,10 @@
+streamlit
+pandas
+scikit-learn
+google-generativeai
+Pillow
+gTTS
+googletrans==4.0.0-rc1
+PyPDF2
+plotly
+python-dotenv
